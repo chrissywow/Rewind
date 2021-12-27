@@ -58,17 +58,48 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function helloWorld(){
-                            alert("hello World");
+                        //Get the string from the page
+                        function getValue(){
+                        
+                            document.getElementById("alert").classList.add("invisible");
+                            let userString = document.getElementById("userString").value;
+                            let revString = reverseString(userString);
+                            displayString(revString)
+                        }
+                        
+                        //Reverse the string
+                        //log function 
+                        function reverseString(userString){
+                        
+                            let revString = [];
+                            //reverse a string using a for loop 
+                            for (let index = userString.length - 1 ; index >= 0; index --) {
+                                revString += userString[index];        
+                            }
+                            return revString;
+                        }
+                        
+                        
+                        //Display the reversed string to the user
+                        //view Function
+                        function displayString(revString){
+                        
+                            //write to the pages 
+                            document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`;
+                            //show the alert box 
+                            document.getElementById("alert").classList.remove("invisible");
+                        
                         }
                     </code>
                 </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <p>The Code is structured in 3 functions</p>
+                    <h5>REWIND</h5>
+                    <p>The First function get's the string from the page. <br>
+                        <br> The Second function reverses the string using a for loop then returns the string.<br>
+                        <br> The Third function displays the reversed string to the user with a pop up that uncovers the alert for the display message.
+                    </p>
 
                 </div>
             </div>
